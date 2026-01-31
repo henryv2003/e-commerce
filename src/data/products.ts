@@ -223,4 +223,4 @@ export const categories = [
   { id: 'perfumes', name: 'perfumes', color: '#f0d5ba' }
 ];
 
-export const whatsappNumber = '+46729018793'; // Replace with your actual WhatsApp number
+export const whatsappNumber = '+46735683936'; // Replace with your actual WhatsApp number
