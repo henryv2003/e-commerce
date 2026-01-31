@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import Home from './pages/Home';
 import Products from './pages/Products';
@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   return (
     <CartProvider>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <div className="App">
           <Routes>
             <Route path="/" element={<Home />} />
