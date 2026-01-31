@@ -118,7 +118,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
 
           {product.type === 'physical' && (
             <div className="product-digital">
-              📱 Digital Product
+              📱 Physical Product
             </div>
           )}
         </div>
