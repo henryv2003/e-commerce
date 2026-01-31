@@ -2,7 +2,7 @@ import { CartItem, OrderInfo } from '../types';
 import { whatsappNumber } from '../data/products';
 
 export const formatWhatsAppOrder = (
-  cartItems: CartItem[], 
+  cartItems: CartItem[],
   orderInfo: OrderInfo
 ): string => {
   const subtotal = cartItems.reduce(
@@ -17,11 +17,11 @@ export const formatWhatsAppOrder = (
   message += `Name: ${orderInfo.name}\n`;
   message += `Email: ${orderInfo.email}\n`;
   message += `Phone: ${orderInfo.phone}\n`;
-  
+
   if (orderInfo.address) {
     message += `Address: ${orderInfo.address}\n`;
   }
-  
+
   message += `\n📦 *Order Details*\n`;
   message += `Date: ${new Date().toLocaleDateString()}\n`;
   message += `Order ID: #${Date.now().toString().slice(-6)}\n\n`;
@@ -32,19 +32,19 @@ export const formatWhatsAppOrder = (
   cartItems.forEach((item, index) => {
     message += `${index + 1}. *${item.product.name}*\n`;
     message += `   📝 Category: ${item.product.category}\n`;
-    message += `   🏷️ Type: ${item.product.type === 'digital' ? 'Digital Product' : 'Physical Product'}\n`;
+    message += `   🏷️ Type: Physical Product\n`;
     message += `   💰 Price: $${item.product.price.toFixed(2)}\n`;
     message += `   📊 Quantity: ${item.quantity}\n`;
     message += `   💵 Subtotal: $${(item.product.price * item.quantity).toFixed(2)}\n`;
-    
+
     if (item.selectedColor) {
       message += `   🎨 Color: ${item.selectedColor}\n`;
     }
-    
+
     if (item.selectedSize) {
       message += `   📏 Size: ${item.selectedSize}\n`;
     }
-    
+
     message += `${'─'.repeat(40)}\n`;
   });
 
@@ -66,13 +66,13 @@ export const formatWhatsAppOrder = (
 };
 
 export const sendWhatsAppOrder = (
-  cartItems: CartItem[], 
+  cartItems: CartItem[],
   orderInfo: OrderInfo
 ): void => {
   const message = formatWhatsAppOrder(cartItems, orderInfo);
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
-  
+
   window.open(whatsappUrl, '_blank');
 };
 
@@ -82,6 +82,6 @@ export const formatOrderSummary = (cartItems: CartItem[]): string => {
     (total, item) => total + item.product.price * item.quantity,
     0
   );
-  
+
   return `${itemCount} items • $${subtotal.toFixed(2)}`;
 };

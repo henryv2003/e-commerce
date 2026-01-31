@@ -9,7 +9,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
   const [showAllFeatures, setShowAllFeatures] = React.useState(false);
-  
+
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -55,7 +55,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
                 img.src = pngSrc;
                 return;
               }
-              
+
               // Fallback to emoji if both fail
               img.style.display = 'none';
               const fallback = img.parentElement;
@@ -116,7 +116,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
             </div>
           )}
 
-          {product.type === 'digital' && (
+          {product.type === 'physical' && (
             <div className="product-digital">
               📱 Digital Product
             </div>

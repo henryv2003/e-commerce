@@ -10,19 +10,24 @@ const Home: React.FC = () => {
   const { addToCart, getCartItemCount } = useCart();
 
   // Featured products (new and trending items)
-  const featuredProducts = products.filter(product => 
+  const featuredProducts = products.filter(product =>
     product.badge === 'new' || product.badge === 'trending'
   ).slice(0, 6);
 
+  // Physical products showcase
+  const physicalProducts = products.filter(product =>
+    product.type === 'physical'
+  ).slice(0, 4);
+
   // Digital products showcase
-  const digitalProducts = products.filter(product => 
+  const digitalProducts = products.filter(product =>
     product.type === 'digital'
   ).slice(0, 4);
 
   return (
     <div className="home">
       <Header cartItemCount={getCartItemCount()} />
-      
+
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
@@ -55,23 +60,23 @@ const Home: React.FC = () => {
             <h2>✨ Featured Products</h2>
             <p>New arrivals and trending items you'll love</p>
           </div>
-          <ProductList 
-            products={featuredProducts} 
+          <ProductList
+            products={featuredProducts}
             onAddToCart={addToCart}
             title=""
           />
         </div>
       </section>
 
-      {/* Digital Products */}
-      <section className="digital-section">
+      {/* Physical Products */}
+      <section className="physical-section">
         <div className="container">
           <div className="section-header">
-            <h2>📱 Digital Products</h2>
-            <p>Instant downloads, lifelong access</p>
+            <h2>� Physical Products</h2>
+            <p>Quality items delivered to your door</p>
           </div>
-          <ProductList 
-            products={digitalProducts} 
+          <ProductList
+            products={physicalProducts}
             onAddToCart={addToCart}
             title=""
           />

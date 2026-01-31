@@ -170,6 +170,7 @@ export const products: Product[] = [
     rating: 4.3,
     reviews: 15
   },
+  */
 
   // perfumeria
   {

@@ -50,11 +50,11 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
               <div className="item-image">
                 📦 {item.product.name.split(' ')[0]}
               </div>
-              
+
               <div className="item-details">
                 <h4 className="item-name">{item.product.name}</h4>
                 <p className="item-category">{item.product.category}</p>
-                {item.product.type === 'digital' && (
+                {item.product.type === 'physical' && (
                   <span className="digital-badge">📱 Digital</span>
                 )}
                 {item.product.type === 'physical' && (
@@ -69,14 +69,14 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
               </div>
 
               <div className="item-quantity">
-                <button 
+                <button
                   className="quantity-btn"
                   onClick={() => onUpdateQuantity(item.product.id, item.quantity - 1)}
                 >
                   -
                 </button>
                 <span className="quantity">{item.quantity}</span>
-                <button 
+                <button
                   className="quantity-btn"
                   onClick={() => onUpdateQuantity(item.product.id, item.quantity + 1)}
                 >
@@ -88,7 +88,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
                 ${(item.product.price * item.quantity).toFixed(2)}
               </div>
 
-              <button 
+              <button
                 className="remove-btn"
                 onClick={() => onRemoveItem(item.product.id)}
               >
@@ -101,17 +101,17 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
         <div className="cart-summary">
           <div className="summary-card">
             <h3>Order Summary</h3>
-            
+
             <div className="summary-row">
               <span>Subtotal</span>
               <span>${getSubtotal().toFixed(2)}</span>
             </div>
-            
+
             <div className="summary-row">
               <span>Tax (8%)</span>
               <span>${tax.toFixed(2)}</span>
             </div>
-            
+
             <div className="summary-row total">
               <span>Total</span>
               <span>${total.toFixed(2)}</span>
@@ -120,7 +120,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
             <button className="btn btn-primary checkout-btn" onClick={onCheckout}>
               Proceed to Checkout
             </button>
-            
+
             <p className="checkout-note">
               📱 Your order will be sent via WhatsApp
             </p>
