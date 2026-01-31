@@ -55,7 +55,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
                 <h4 className="item-name">{item.product.name}</h4>
                 <p className="item-category">{item.product.category}</p>
                 {item.product.type === 'physical' && (
-                  <span className="digital-badge">📱 Digital</span>
+                  <span className="stock-info">📦</span>
                 )}
                 {item.product.type === 'physical' && (
                   <span className="stock-info">
