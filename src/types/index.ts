@@ -3,7 +3,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  category: 'cuidado facial' | 'ropa' | 'digital' | 'home' | 'books';
+  category: 'cuidado facial' | 'ropa' | 'comestibles' | 'maquillaje' | 'perfumes';
   type: 'physical' | 'digital';
   image: string;
   stock: number;

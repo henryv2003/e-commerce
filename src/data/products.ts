@@ -53,7 +53,7 @@ export const products: Product[] = [
     price: 29.99,
     category: 'ropa',
     type: 'physical',
-    image: 'tshirt',
+    image: 'shirt_1',
     stock: 50,
     colors: ['#e3a7c0', '#bad5f0', '#c2d5a8', '#f3b1cd'],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -67,7 +67,7 @@ export const products: Product[] = [
     price: 89.99,
     category: 'ropa',
     type: 'physical',
-    image: 'denim-jacket',
+    image: 'jacket_1',
     stock: 20,
     badge: 'sale',
     colors: ['#2d3748', '#4a5568'],
@@ -82,7 +82,7 @@ export const products: Product[] = [
     price: 54.99,
     category: 'ropa',
     type: 'physical',
-    image: 'leggings',
+    image: 'yoga_1',
     stock: 30,
     colors: ['#b0abcb', '#f8d7e8', '#000000'],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -90,21 +90,21 @@ export const products: Product[] = [
     reviews: 89
   },
 
-  // Digital Products
+  // Productos comestibles
   {
     id: '7',
-    name: 'Photography Course',
-    description: 'Complete photography masterclass for beginners to advanced',
+    name: 'comestibles',
+    description: 'lorem ipsum dolor sit amet',
     price: 79.99,
-    category: 'digital',
-    type: 'digital',
-    image: 'photography-course',
+    category: 'comestibles',
+    type: 'physical',
+    image: 'comestibles_1',
     stock: 999,
     badge: 'new',
     rating: 4.9,
     reviews: 156
   },
-  {
+  /*{
     id: '8',
     name: 'Design Templates Pack',
     description: '500+ professional design templates for social media and marketing',
@@ -116,8 +116,8 @@ export const products: Product[] = [
     badge: 'limited',
     rating: 4.4,
     reviews: 78
-  },
-  {
+  },*/
+  /*{
     id: '9',
     name: 'Ebook: Web Development',
     description: 'Complete guide to modern web development with React and Node.js',
@@ -128,22 +128,23 @@ export const products: Product[] = [
     stock: 999,
     rating: 4.6,
     reviews: 92
-  },
+  },*/
 
   // Home & Living
   {
     id: '10',
-    name: 'Ceramic Vase Set',
-    description: 'Handcrafted ceramic vases in modern minimalist design',
+    name: 'maquillaje',
+    description: 'lorem ipsum dolor sit amet',
     price: 69.99,
-    category: 'home',
+    category: 'maquillaje',
     type: 'physical',
-    image: 'vases',
+    image: 'maquilla_1',
     stock: 12,
     colors: ['#f8efe6', '#d6eff6', '#fae4cd'],
     rating: 4.8,
     reviews: 21
   },
+  /*
   {
     id: '11',
     name: 'Throw Pillow Collection',
@@ -170,20 +171,21 @@ export const products: Product[] = [
     reviews: 15
   },
 
-  // Books
+  // perfumeria
   {
     id: '13',
-    name: 'Fiction Novel Collection',
-    description: 'Bestselling fiction novels set - 3 books bundle',
+    name: 'perfume_1',
+    description: 'lorem ipsum dolor sit amet',
     price: 59.99,
-    category: 'books',
+    category: 'perfumes',
     type: 'physical',
-    image: 'fiction-books',
+    image: 'perfume_1',
     stock: 25,
     badge: 'trending',
     rating: 4.7,
     reviews: 134
   },
+  /*
   {
     id: '14',
     name: 'Cookbook: Healthy Recipes',
@@ -209,15 +211,16 @@ export const products: Product[] = [
     rating: 4.1,
     reviews: 28
   }
+  */
 ];
 
 export const categories = [
   { id: 'all', name: 'All Products', color: '#e3a7c0' },
   { id: 'cuidado facial', name: 'cuidado facial', color: '#bad5f0' },
   { id: 'ropa', name: 'ropa', color: '#c2d5a8' },
-  { id: 'digital', name: 'Digital', color: '#b0abcb' },
-  { id: 'home', name: 'Home & Living', color: '#f3b1cd' },
-  { id: 'books', name: 'Books', color: '#f0d5ba' }
+  { id: 'comestibles', name: 'comestibles', color: '#b0abcb' },
+  { id: 'maquillaje', name: 'maquillaje', color: '#f3b1cd' },
+  { id: 'perfumes', name: 'perfumes', color: '#f0d5ba' }
 ];
 
 export const whatsappNumber = '+46729018793'; // Replace with your actual WhatsApp number
