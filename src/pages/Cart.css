@@ -1,0 +1,15 @@
+.cart {
+  min-height: 100vh;
+}
+
+.cart-main {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-background);
+  min-height: calc(100vh - 200px);
+}
+
+@media (max-width: 768px) {
+  .cart-main {
+    padding: var(--spacing-lg) 0;
+  }
+}

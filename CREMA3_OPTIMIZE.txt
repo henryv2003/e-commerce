@@ -1,0 +1,31 @@
+# Quick guide to optimize crema_3 manually
+
+## Current Status:
+- File: crema_3.png  
+- Size: 301KB
+- Location: public/assets/images/
+
+## Target Goal:
+- Size: Under 50KB (6x smaller!)
+- Format: JPG (better compression)
+- Dimensions: 400x300px (optimal for product cards)
+
+## Easy Steps:
+
+### 1. Convert PNG to JPG (any image editor)
+- Open crema_3.png in Paint/Photoshop/GIMP
+- Save As: crema_3.jpg
+- Quality: 75-85%
+
+### 2. Resize if needed
+- Recommended: 400px width x 300px height
+- Maintains aspect ratio
+
+### 3. Optimize online (optional but recommended)
+1. Go to tinypng.com
+2. Upload crema_3.jpg
+3. Download the compressed version
+4. Replace original file
+
+## Result:
+Your crema_3 will load 6x faster and look just as good! 🚀
