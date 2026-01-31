@@ -130,7 +130,7 @@ export const products: Product[] = [
     reviews: 92
   },*/
 
-  // Home & Living
+  // maquillaje
   {
     id: '10',
     name: 'maquillaje',

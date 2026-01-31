@@ -19,10 +19,6 @@ const Home: React.FC = () => {
     product.type === 'physical'
   ).slice(0, 4);
 
-  // Digital products showcase
-  const digitalProducts = products.filter(product =>
-    product.type === 'digital'
-  ).slice(0, 4);
 
   return (
     <div className="home">
@@ -93,9 +89,9 @@ const Home: React.FC = () => {
               <p>Quick shipping on all physical products</p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">📱</div>
-              <h3>Digital Downloads</h3>
-              <p>Instant access to digital products</p>
+              <div className="feature-icon">📦</div>
+              <h3>Physical Products</h3>
+              <p>various physical products</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">💬</div>
@@ -116,7 +112,7 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="cta-content">
             <h2>🎉 Ready to Shop?</h2>
-            <p>Explore our diverse catalog of physical and digital products</p>
+            <p>Explore our diverse catalog of physical products</p>
             <Link to="/products" className="btn btn-primary cta-btn">
               Browse All Products
             </Link>
