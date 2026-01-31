@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   return (
     <CartProvider>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Routes>
             <Route path="/" element={<Home />} />
