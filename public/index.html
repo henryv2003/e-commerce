@@ -1,115 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="React e-commerce app with WhatsApp checkout" />
-    
-    <!-- Add this for GitHub Pages routing -->
-    <script>
-      (function(l) {
-        if (l.search[1] === '/') {
-          var split = (l.search[1]).split('&');
-          var path = '';
-          for (var i = 0; i < split.length; i++) {
-            var key = split[i].split('=');
-            if (key[0] === 'path') {
-              path = key[1];
-              break;
-            }
-          }
-          window.history.replaceState(null, null, '/' + path);
-        }
-      })(window.location);
-    </script>
-    
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    
-    <!-- Manifest -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
-    <!-- Add these meta tags for better GitHub Pages support -->
-    <meta property="og:title" content="ColorCart - E-Commerce Store" />
-    <meta property="og:description" content="Shop our amazing products with WhatsApp checkout integration" />
-    <meta property="og:type" content="website" />
-    
-    <title>E-Commerce App</title>
-    
-    <style>
-      /* Add these styles to prevent flash of unstyled content */
-      body {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      
-      #root {
-        --color-primary: #e3a7c0;
-        --color-primary-blue: #bad5f0;
-        --color-background: #f8efe6;
-        --color-success: #c2d5a8;
-        --color-accent: #b0abcb;
-        --color-coral: #f3b1cd;
-        --color-sky-blue: #d6eff6;
-        --color-cream: #fae4cd;
-        --color-light-pink: #f8d7e8;
-        --color-beige: #f0d5ba;
-        --color-text-dark: #2d3748;
-        --color-text-light: #4a5568;
-        --color-text-lighter: #718096;
-        --color-white: #ffffff;
-        --color-error: #fc8181;
-        --color-warning: #f6ad55;
-        
-        --spacing-xs: 0.25rem;
-        --spacing-sm: 0.5rem;
-        --spacing-md: 1rem;
-        --spacing-lg: 1.5rem;
-        --spacing-xl: 2rem;
-        --spacing-xxl: 3rem;
-        
-        --border-radius-sm: 0.375rem;
-        --border-radius-md: 0.5rem;
-        --border-radius-lg: 0.75rem;
-        --border-radius-xl: 1rem;
-        --border-radius-full: 9999px;
-        
-        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        
-        --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-        --font-size-xs: 0.75rem;
-        --font-size-sm: 0.875rem;
-        --font-size-md: 1rem;
-        --font-size-lg: 1.125rem;
-        --font-size-xl: 1.25rem;
-        --font-size-2xl: 1.5rem;
-        --font-size-3xl: 1.875rem;
-      }
-      
-      /* Loading animation */
-      .loading {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-size: 1.2rem;
-        color: var(--color-primary);
-      }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="ColorCart - E-Commerce Store">
+    <title>ColorCart - E-Commerce Store</title>
+    <link rel="stylesheet" href="/static/css/main.b1fcec4c.css">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <div class="loading">
-        🛍️ Loading E-Commerce Store...
-      </div>
-    </div>
+    <div id="root"></div>
+    <script>
+      // Simple direct load approach
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, attempting to load React app...');
+        
+        // Load React app
+        var script = document.createElement('script');
+        script.src = '/static/js/main.64c936fb.js';
+        script.async = true;
+        script.onload = function() {
+          console.log('React app script loaded successfully');
+        };
+        script.onerror = function() {
+          console.error('Failed to load React app script');
+          document.getElementById('root').innerHTML = 
+            '<div style="padding: 20px; text-align: center; font-family: sans-serif;">' +
+            '<h1>🛍️ ColorCart Store</h1>' +
+            '<p>Something went wrong loading the store.</p>' +
+            '<p><a href="/">🔄 Click here to refresh</a></p>' +
+            '</div>';
+        };
+        
+        document.head.appendChild(script);
+      });
+    </script>
   </body>
 </html>

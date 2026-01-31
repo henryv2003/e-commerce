@@ -1,0 +1,6 @@
+{
+  "repo": "https://github.com/henryv2003/e-commerce",
+  "paths": {
+    "/": "/public/index.html"
+  }
+}
