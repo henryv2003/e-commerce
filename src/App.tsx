@@ -4,6 +4,8 @@ import { CartProvider } from './context/CartContext';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
+import ProductDetails from './pages/ProductDetails';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -14,8 +16,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
+          <Footer />
         </div>
       </Router>
     </CartProvider>

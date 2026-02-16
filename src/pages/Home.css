@@ -70,14 +70,17 @@
 }
 
 .hero-image {
-  font-size: 6rem;
-  text-align: center;
-  animation: bounce 3s ease-in-out infinite;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-30px); }
+@media (max-width: 768px) {
+  .hero-image {
+    height: 300px;
+  }
 }
 
 /* Featured Section */

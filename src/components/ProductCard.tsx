@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Product } from '../types';
 import './ProductCard.css';
 
@@ -42,45 +43,49 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
 
   return (
     <div className="product-card">
-      <div className="product-image-container">
-        <div className="product-image">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/images/${product.image}.jpg`}
-            alt={product.name}
-            onError={(e) => {
-              // Try PNG if JPG fails
-              const img = e.currentTarget;
-              const pngSrc = `${process.env.PUBLIC_URL}/assets/images/${product.image}.png`;
-              if (img.src !== pngSrc) {
-                img.src = pngSrc;
-                return;
-              }
+      <Link to={`/product/${product.id}`} className="product-link">
+        <div className="product-image-container">
+          <div className="product-image">
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/images/${product.image}.jpg`}
+              alt={product.name}
+              onError={(e) => {
+                // Try PNG if JPG fails
+                const img = e.currentTarget;
+                const pngSrc = `${process.env.PUBLIC_URL}/assets/images/${product.image}.png`;
+                if (img.src !== pngSrc) {
+                  img.src = pngSrc;
+                  return;
+                }
 
-              // Fallback to emoji if both fail
-              img.style.display = 'none';
-              const fallback = img.parentElement;
-              if (fallback && !fallback.querySelector('.fallback-icon')) {
-                const fallbackDiv = document.createElement('div');
-                fallbackDiv.className = 'fallback-icon';
-                fallbackDiv.textContent = '📦 ' + product.name.split(' ')[0];
-                fallback.appendChild(fallbackDiv);
-              }
-            }}
-          />
+                // Fallback to emoji if both fail
+                img.style.display = 'none';
+                const fallback = img.parentElement;
+                if (fallback && !fallback.querySelector('.fallback-icon')) {
+                  const fallbackDiv = document.createElement('div');
+                  fallbackDiv.className = 'fallback-icon';
+                  fallbackDiv.textContent = '📦 ' + product.name.split(' ')[0];
+                  fallback.appendChild(fallbackDiv);
+                }
+              }}
+            />
+          </div>
+          {product.badge && (
+            <span className={`badge badge-${product.badge}`}>
+              {product.badge}
+            </span>
+          )}
         </div>
-        {product.badge && (
-          <span className={`badge badge-${product.badge}`}>
-            {product.badge}
-          </span>
-        )}
-      </div>
+      </Link>
 
       <div className="product-info">
         <div className="product-category">
           {product.category}
         </div>
 
-        <h3 className="product-name">{product.name}</h3>
+        <Link to={`/product/${product.id}`} className="product-link">
+          <h3 className="product-name">{product.name}</h3>
+        </Link>
 
         <p className="product-description">{product.description}</p>
 

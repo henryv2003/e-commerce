@@ -1,0 +1,99 @@
+.footer {
+  background-color: var(--color-text-dark);
+  color: var(--color-white);
+  padding: var(--spacing-xxl) 0 var(--spacing-md);
+  margin-top: auto;
+  /* Push to bottom if content is short */
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.footer-section h4 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
+}
+
+.footer-brand {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-white);
+  text-decoration: none;
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-tagline {
+  color: #ccc;
+  margin-bottom: var(--spacing-md);
+}
+
+.social-icons {
+  display: flex;
+  gap: var(--spacing-md);
+  font-size: 1.5rem;
+}
+
+.social-icons a {
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.links-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links-section li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.links-section a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.links-section a:hover {
+  color: var(--color-primary);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.newsletter-form input {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  flex: 1;
+}
+
+.btn-small {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: var(--spacing-md);
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}

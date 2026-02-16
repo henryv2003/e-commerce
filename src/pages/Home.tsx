@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import ProductList from '../components/ProductList';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
+import Hero3D from '../components/Hero3D';
 import './Home.css';
 
 const Home: React.FC = () => {
   const { addToCart, getCartItemCount } = useCart();
+  const navigate = useNavigate();
 
   // Featured products (new and trending items)
   const featuredProducts = products.filter(product =>
@@ -44,7 +46,7 @@ const Home: React.FC = () => {
             </div>
           </div>
           <div className="hero-image">
-            🌈 🛍️ ✨
+            <Hero3D onNavigate={(path) => navigate(path)} />
           </div>
         </div>
       </section>
@@ -68,7 +70,7 @@ const Home: React.FC = () => {
       <section className="physical-section">
         <div className="container">
           <div className="section-header">
-            <h2>� Physical Products</h2>
+            <h2> Physical Products</h2>
             <p>Quality items delivered to your door</p>
           </div>
           <ProductList
