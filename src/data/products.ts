@@ -220,4 +220,4 @@ export const categories = [
   { id: 'books', name: 'Books', color: '#f0d5ba' }
 ];
 
-export const whatsappNumber = '+46729018793'; // Replace with your actual WhatsApp number
+export const whatsappNumber = '+50494753855';// Replace with your actual WhatsApp number
