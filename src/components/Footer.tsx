@@ -32,9 +32,9 @@ const Footer: React.FC = () => {
           <h4>Support</h4>
           <ul>
             <li><Link to="/cart">My Cart</Link></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Returns</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><button onClick={() => alert('Coming soon!')} style={{background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline'}}>Shipping Info</button></li>
+            <li><button onClick={() => alert('Coming soon!')} style={{background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline'}}>Returns</button></li>
+            <li><button onClick={() => alert('Coming soon!')} style={{background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline'}}>Contact Us</button></li>
           </ul>
         </div>
 

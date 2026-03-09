@@ -2,33 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Redirecting...</title>
+    <title>ColorCart - E-Commerce Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
       // Single Page Apps for GitHub Pages
-      // Learn more: https://github.com/rafrex/spa-github-pages
-      sessionStorage.redirect = sessionStorage.redirect || '';
-      
-      // Route all requests to index.html
-      var segmentCount = 0;
-      var l = window.location;
-      l.replace(
-        /^https?:\\/\\/(.+?)?(?:#)?(.*)$/,
-        function(match) {
-          l.replace pathname = '/#' + (segmentCount ? ++segmentCount : '/');
-          window.history.pushState(null, null, '/' + match[1]);
-          return true;
+      // Redirect non-existent routes to index.html
+      var path = window.location.pathname;
+      if (path && path !== '/' && !path.endsWith('.html')) {
+        var segments = path.split('/').filter(Boolean);
+        // Remove repo name if it exists
+        if (segments[0] === 'e-commerce') {
+          segments.shift();
         }
-      );
-      
-      // This ensures that any route access loads the app
-      if (!/^https?:\\/\\/.+/.test(l.href) && l.pathname !== '/') {
-        l.replace('/');
+        // Redirect to index with hash-based routing
+        var redirect = '/e-commerce/#/' + segments.join('/');
+        window.location.replace(redirect);
       }
     </script>
-    <link rel="stylesheet" href="/static/css/main.b1fcec4c.css">
   </head>
   <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="/static/js/main.64c936fb.js"></script>
   </body>
 </html>
